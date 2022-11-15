@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  mysql: # Mysql container
+    container_name: local-mysql
+    image: mysql:5.7
+    platform: linux/x86_64
+    volumes:
+      - ./data:/var/lib/mysql:delegated
+      - ./my.cnf:/etc/mysql/my.cnf:delegated
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ca
+      MYSQL_USER: local
+      MYSQL_PASSWORD: local
+      TZ: Asia/Tokyo
+    ports:
+      - 3306:3306
