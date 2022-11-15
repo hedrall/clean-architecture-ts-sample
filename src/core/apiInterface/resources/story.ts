@@ -6,6 +6,10 @@ export namespace DtoStoryResource {
     export type Input = {
       category: DtoCategoryIndex;
     }
-    export type Output = DtoStory[];
+    export type Output = DtoStory.Read[];
+  }
+  export namespace Post {
+    export type Input = DtoStory.Write;
+    export type Output = DtoStory.Read;
   }
 }

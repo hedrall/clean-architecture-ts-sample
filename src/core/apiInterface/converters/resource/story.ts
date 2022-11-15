@@ -5,13 +5,21 @@ import { dtoStoryConverter } from '@src/core/apiInterface/converters/models/stor
 
 export const DtoStoryResourceConverter = {
   List: {
-    toUseCase: (params: DtoStoryResource.List.Input): IStoryUseCase.List.Params => {
+    toUseCase: (inputDto: DtoStoryResource.List.Input): IStoryUseCase.List.Params => {
       return {
-        category: DTO_CATEGORY_INDEX_REVERSE_MAP[params.category],
+        category: DTO_CATEGORY_INDEX_REVERSE_MAP[inputDto.category],
       }
     },
-    toDto: (response: IStoryUseCase.List.Response): DtoStoryResource.List.Output => {
-      return response.map(dtoStoryConverter.toDto);
+    toDto: (domainResponse: IStoryUseCase.List.Response): DtoStoryResource.List.Output => {
+      return domainResponse.map(dtoStoryConverter.read.toDto);
     },
-  }
+  },
+  Post: {
+    toUseCase: (inputDto: DtoStoryResource.Post.Input): IStoryUseCase.Post.Params => {
+      return dtoStoryConverter.write.toDomain( inputDto );
+    },
+    toDto: (domainResponse: IStoryUseCase.Post.Response): DtoStoryResource.Post.Output => {
+      return dtoStoryConverter.read.toDto(domainResponse);
+    }
+  },
 }

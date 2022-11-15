@@ -14,4 +14,9 @@ export class StoryUseCase implements IStoryUseCase {
     const client = await this.dbRepository.getClient();
     return await this.storyRepository.list(client, params);
   }
+
+  post: IStoryUseCase.Post = async params => {
+    const client = await this.dbRepository.getClient();
+    return await this.storyRepository.save(client, params);
+  }
 }

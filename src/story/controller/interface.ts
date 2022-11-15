@@ -10,4 +10,10 @@ export namespace IStoryController {
     export type Response = DtoStoryResource.List.Output
   }
   export type List = (params: List.Params) => Promise<List.Response>;
+
+  export namespace Post {
+    export type Params = DtoStoryResource.Post.Input;
+    export type Response = DtoStoryResource.Post.Output
+  }
+  export type Post = (params: Post.Params) => Promise<Post.Response>;
 }

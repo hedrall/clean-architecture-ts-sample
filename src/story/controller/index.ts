@@ -12,4 +12,10 @@ export class StoryController implements IStoryController {
     const res = await this.useCase.list(params);
     return DtoStoryResourceConverter.List.toDto(res);
   }
+
+  post: IStoryController.Post = async dto => {
+    const params = DtoStoryResourceConverter.Post.toUseCase(dto);
+    const res = await this.useCase.post(params);
+    return DtoStoryResourceConverter.Post.toDto(res);
+  }
 }

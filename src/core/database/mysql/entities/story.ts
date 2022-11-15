@@ -6,7 +6,7 @@ type StoryCategoryIndex = 3 | 4;
 @Entity('story')
 export class DbStory {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id?: number | undefined;
 
   @Column({ type: 'varchar', comment: 'タイトル' })
   title!: string
