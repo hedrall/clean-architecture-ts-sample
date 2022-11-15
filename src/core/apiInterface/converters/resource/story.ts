@@ -1,5 +1,5 @@
 import { DtoStoryResource } from '@src/core/apiInterface/resources/story';
-import { IStoryUseCase } from '@src/story/useCase/story/interface';
+import { IStoryUseCase } from '@src/story/useCase/interface';
 import { DTO_CATEGORY_INDEX_REVERSE_MAP } from '@src/core/apiInterface/models/category';
 import { dtoStoryConverter } from '@src/core/apiInterface/converters/models/story';
 

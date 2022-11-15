@@ -1,5 +1,5 @@
 import { StoryController } from '@src/story/controller';
-import { StoryUseCase } from '@src/story/useCase/story';
+import { StoryUseCase } from '@src/story/useCase';
 import { StoryRepository } from '@src/story/repository';
 import { MysqlDbRepository } from '@src/core/database/repository/mysql';
 

@@ -1,6 +1,6 @@
 import { IStoryController } from '@src/story/controller/interface';
 import { DtoStoryResourceConverter } from '@src/core/apiInterface/converters/resource/story';
-import { IStoryUseCase } from '@src/story/useCase/story/interface';
+import { IStoryUseCase } from '@src/story/useCase/interface';
 import { CONTAINERS } from '@src/story/di';
 
 export class StoryController implements IStoryController {

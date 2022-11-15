@@ -1,4 +1,4 @@
-import { IStoryUseCase } from '@src/story/useCase/story/interface';
+import { IStoryUseCase } from '@src/story/useCase/interface';
 import { IStoryRepository } from '@src/story/repository/interface';
 import { CONTAINERS } from '@src/story/di';
 import { IDbRepository } from '@src/core/database/repository/interface';
