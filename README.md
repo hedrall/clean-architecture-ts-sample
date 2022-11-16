@@ -1,10 +1,10 @@
-# 起動方法
+# StartUp
 
-**MySQL comtainerの起動**
+**Start MySQL Container**
 
 `make start-local-mysql`
 
-**APIの起動**
+**Start Api Server**
 
 `npm run dev`
 
