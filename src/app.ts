@@ -1,5 +1,6 @@
 import express from 'express';
 import { CONTAINERS } from '@src/story/di';
+import { IStoryController } from '@src/story/controller/interface';
 
 const api = express();
 
@@ -19,12 +20,14 @@ api.get('/story/list', async (req, res, next) => {
   if ((!(categoryIndex === 1 || categoryIndex === 2))) {
     throw new Error('categoryは1, 2のいずれかです。');
   }
-  const result = await CONTAINERS.STORY.CONTROLLER().list({ category: categoryIndex });
+  const controller: IStoryController.List = CONTAINERS.STORY.CONTROLLER().list;
+  const result = await controller({ category: categoryIndex });
   res.json(result);
 });
 
 api.post('/story', async (req, res, next) => {
-  const result = await CONTAINERS.STORY.CONTROLLER().post(req.body as any);
+  const post: IStoryController.Post = CONTAINERS.STORY.CONTROLLER().post;
+  const result = await post(req.body as any);
   res.json(result);
 });
 
